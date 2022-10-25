@@ -7,7 +7,7 @@
     "test": "mocha",
     "start": "node server.js"
   },
-  "author": "Roshan",
+  "author": "Roshan Kumar",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -17,8 +17,9 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
     "mocha": "^9.1.3",
+    "module": "^1.2.5",
     "mongodb": "^4.1.3",
     "mongoose": "^6.0.11",
-    "validator": "^13.6.0"
+    "validator": "^13.7.0"
   }
 }
