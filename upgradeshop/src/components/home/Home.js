@@ -1,5 +1,6 @@
 //import AppBar from '@material-ui/core/AppBar';
 
+
 import React from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -23,8 +24,11 @@ import Link from '@material-ui/core/Link';
 import { Redirect } from 'react-router-dom';
 import Login from '../login';
 import SignUp from '../signUp';
-import { NavLink } from 'react-router-dom';
-import authService from '../service/auth.service';
+import { NavLink } from "react-router-dom";
+import authService from "../service/auth.service";
+
+
+
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -86,8 +90,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   link: {
-    color: 'white',
-    margin: '20px',
+    color: "white",
+    margin: "20px",
   },
 }));
 
@@ -115,6 +119,7 @@ export default function PrimarySearchAppBar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -188,7 +193,7 @@ export default function PrimarySearchAppBar() {
           <Typography className={classes.title} variant="h6" noWrap>
             UpGrad E-Shop
           </Typography>
-
+          
           {!authService.isLoggedIn() && (
             <>
               <NavLink className={classes.link} to="/login">
@@ -199,21 +204,21 @@ export default function PrimarySearchAppBar() {
               </NavLink>
             </>
           )}
-          {authService.isLoggedIn() && (
+         {authService.isLoggedIn() && (
             <>
               <div className={classes.search}>
-                <div className={classes.searchIcon}>
-                  <SearchIcon />
-                </div>
-                <InputBase
-                  placeholder="Search…"
-                  classes={{
-                    root: classes.inputRoot,
-                    input: classes.inputInput,
-                  }}
-                  inputProps={{ 'aria-label': 'search' }}
-                />
-              </div>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </div>
               <NavLink className={classes.link} to="/home">
                 Home
               </NavLink>
@@ -231,13 +236,7 @@ export default function PrimarySearchAppBar() {
           )}
 
           {authService.isLoggedIn() && (
-            <Button
-              variant="contained"
-              color="secondary"
-              onClick={authService.doLogout}
-            >
-              Logout
-            </Button>
+            <Button variant='contained' color='secondary' onClick={authService.doLogout}>Logout</Button>
           )}
         </Toolbar>
       </AppBar>

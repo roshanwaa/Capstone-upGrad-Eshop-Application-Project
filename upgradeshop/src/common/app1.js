@@ -8,7 +8,9 @@ import routes from '../components/app';
 function App(props) {
   return (
     <ConnectedRouter history={props.history}>
-      <div className="App">{routes}</div>
+    <div className="App">
+      {routes}
+    </div>
     </ConnectedRouter>
   );
 }
